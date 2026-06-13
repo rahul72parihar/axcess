@@ -1,4 +1,14 @@
 import "./Callpage.css";
+import musicImg from "../assets/musicicon.png";
+import { RiVerifiedBadgeFill } from "react-icons/ri";
+import { MdSecurity } from "react-icons/md";
+import { BsExclamationTriangle } from "react-icons/bs";
+import {
+  TbPhone,
+  TbPhoneOff,
+  TbMicrophone,
+  TbVolume,
+} from "react-icons/tb";
 
 export default function Callpage() {
   return (
@@ -8,11 +18,13 @@ export default function Callpage() {
         {/* Header */}
         <header className="call-header">
           <div className="logo">
-            Axcess <span>🎵</span>
+            <img src={musicImg} alt="Axcess" className="logo-icon" />
+            Axcess
           </div>
 
           <button className="top-end-btn">
-            📞 End Call
+            <TbPhoneOff size={18} />
+            End Call
           </button>
         </header>
 
@@ -21,22 +33,19 @@ export default function Callpage() {
 
           <div className="hero-left">
             <div className="live-badge">
-              🔴 LIVE
+              <span className="live-dot" />
+              LIVE
             </div>
 
             <h1>You're in a call</h1>
 
-            <p>
-              Enjoy your 1-on-1 conversation
-            </p>
+            <p>Enjoy your 1-on-1 conversation</p>
           </div>
 
           <div className="timer-card">
             <h3>Time Left</h3>
 
-            <div className="timer-big">
-              02:47
-            </div>
+            <div className="timer-big">02:47</div>
 
             <p>of 03:00 min</p>
 
@@ -59,13 +68,13 @@ export default function Callpage() {
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=80"
                 alt="Aisha"
                 className="avatar-img"
-                id ="avatarImg"
+                id="avatarImg"
               />
             </div>
 
             <h2>
               Aisha
-              <span className="verified">✓</span>
+              <RiVerifiedBadgeFill size={20} className="verified" />
             </h2>
 
             <p>8.7K followers</p>
@@ -81,21 +90,21 @@ export default function Callpage() {
 
           <div className="control">
             <button className="circle-btn">
-              🎤
+              <TbMicrophone size={26} />
             </button>
             <span>Mute</span>
           </div>
 
           <div className="control">
             <button className="circle-btn end">
-              📞
+              <TbPhoneOff size={26} />
             </button>
             <span>End Call</span>
           </div>
 
           <div className="control">
             <button className="circle-btn">
-              🔊
+              <TbVolume size={26} />
             </button>
             <span>Speaker</span>
           </div>
@@ -104,10 +113,10 @@ export default function Callpage() {
 
         {/* Warning */}
         <div className="warning-card">
-          ⚠️ Any abusive, inappropriate, or offensive
-          behavior during a call may result in immediate
-          disconnection by the host. No refund will be
-          provided.
+          <BsExclamationTriangle size={16} style={{ flexShrink: 0, marginTop: 2 }} />
+          Any abusive, inappropriate, or offensive behavior during a call
+          may result in immediate disconnection by the host. No refund will
+          be provided.
         </div>
 
         {/* Stats */}
@@ -128,7 +137,8 @@ export default function Callpage() {
         </div>
 
         <div className="secure-footer">
-          🔒 100% private and secure
+          <MdSecurity size={16} />
+          100% private and secure
         </div>
 
       </div>

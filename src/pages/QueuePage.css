@@ -1,298 +1,405 @@
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-  font-family:Inter,sans-serif;
-  background:#fafafa;
-  color:#111827;
+body {
+  font-family: Inter, sans-serif;
+  background: #fafafa;
+  color: #111827;
 }
 
-.queue-container{
-  max-width:1400px;
-  margin:auto;
-  padding:24px;
+.queue-container {
+  max-width: 1400px;
+  margin: auto;
+  padding: 24px;
 }
 
 /* HEADER */
 
-.queue-header{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-bottom:24px;
+.queue-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
 }
 
-.logo{
-  font-size:3rem;
-  font-weight:800;
+.logo {
+  font-size: 3rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.logo span{
-  color:#5b32f3;
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
-.header-right{
-  display:flex;
-  gap:30px;
-  align-items:center;
+.header-right {
+  display: flex;
+  gap: 30px;
+  align-items: center;
 }
 
-.user-box{
-  display:flex;
-  align-items:center;
-  gap:10px;
+.user-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
-.user-box img{
-  width:48px;
-  height:48px;
-  border-radius:50%;
+.user-box img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
 }
 
-.secure{
-  font-weight:500;
+.secure {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* GRID */
 
-.content-grid{
-  display:grid;
-  grid-template-columns:2fr 420px;
-  gap:24px;
+.content-grid {
+  display: grid;
+  grid-template-columns: 2fr 420px;
+  gap: 24px;
 }
 
 /* MAIN */
 
-.main-card{
-  background:white;
-  border:1px solid #ececec;
-  border-radius:24px;
-  padding:28px;
+.main-card {
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 24px;
+  padding: 28px;
 }
 
-.queue-title{
-  display:flex;
-  gap:20px;
-  align-items:center;
+.queue-title {
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-.icon-circle{
-  width:72px;
-  height:72px;
-  border-radius:50%;
-  background:#f4efff;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:2rem;
+/* ✅ icon-circle uses flex, no font-size needed — react-icons size prop handles it */
+.icon-circle {
+  width: 72px;
+  height: 72px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #f4efff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #5b32f3;
 }
 
-.queue-title h1{
-  font-size:3rem;
+.queue-title h1 {
+  font-size: 3rem;
 }
 
-.queue-title p{
-  color:#666;
-  margin-top:8px;
+.queue-title p {
+  color: #666;
+  margin-top: 8px;
 }
 
-.queue-status{
-  margin-top:30px;
-  background:#f5f0ff;
-  border-radius:20px;
-  display:flex;
-  justify-content:space-around;
-  align-items:center;
-  padding:40px;
+.queue-status {
+  margin-top: 30px;
+  background: #f5f0ff;
+  border-radius: 20px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px;
 }
 
-.status-item{
-  text-align:center;
+.status-item {
+  text-align: center;
 }
 
-.status-item h2{
-  font-size:3rem;
-  color:#5b32f3;
-  margin-top:10px;
+.status-item p {
+  color: #666;
+  font-size: 0.95rem;
 }
 
-.divider{
-  width:1px;
-  height:100px;
-  background:#d8cdfc;
+.status-item h2 {
+  font-size: 3rem;
+  color: #5b32f3;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
-.warning-box{
-  margin-top:24px;
-  background:#fff8eb;
-  border:1px solid #ffe0a8;
-  border-radius:18px;
-  padding:20px;
+.divider {
+  width: 1px;
+  height: 100px;
+  background: #d8cdfc;
 }
 
-.bottom-row{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  margin-top:60px;
+/* ✅ flex so icon + text sit side by side */
+.warning-box {
+  margin-top: 24px;
+  background: #fff8eb;
+  border: 1px solid #ffe0a8;
+  border-radius: 18px;
+  padding: 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #92640a;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.info-text{
-  display:flex;
-  gap:15px;
-  align-items:flex-start;
+.bottom-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 60px;
 }
 
-.join-btn{
-  background:#ececec;
-  color:#777;
-  border:none;
-  padding:18px 35px;
-  border-radius:18px;
-  font-size:1.2rem;
-  font-weight:700;
+.info-text {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  color: #444;
+}
+
+.info-text h3 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.info-text p {
+  color: #888;
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+/* ✅ join-btn styled as active purple button with icon alignment */
+.join-btn {
+  background: #5b32f3;
+  color: white;
+  border: none;
+  padding: 18px 35px;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.2s;
+}
+
+.join-btn:hover {
+  background: #4a25d4;
 }
 
 /* SIDEBAR */
 
-.sidebar{
-  display:flex;
-  flex-direction:column;
-  gap:20px;
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .creator-card,
-.rules-card{
-  background:white;
-  border:1px solid #ececec;
-  border-radius:24px;
-  padding:24px;
+.rules-card {
+  background: white;
+  border: 1px solid #ececec;
+  border-radius: 24px;
+  padding: 24px;
 }
 
-.avatar-wrapper-queue{
-  position:relative;
-  width:120px;
-  margin:auto;
+.avatar-wrapper-queue {
+  position: relative;
+  width: 120px;
+  margin: auto;
 }
 
-.avatar-wrapper-queue img{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
+.avatar-wrapper-queue img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
-.online{
-  width:18px;
-  height:18px;
-  border-radius:50%;
-  background:#22c55e;
-  position:absolute;
-  right:10px;
-  top:10px;
+.online {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #22c55e;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border: 2px solid white;
 }
 
-.creator-card h2{
-  text-align:center;
-  margin-top:15px;
+.creator-card h2 {
+  text-align: center;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
 }
 
-.creator-card p{
-  text-align:center;
-  color:#666;
+.creator-card > p {
+  text-align: center;
+  color: #666;
+  margin-top: 4px;
 }
 
-.details{
-  margin-top:20px;
+.details {
+  margin-top: 20px;
 }
 
-.details div{
-  display:flex;
-  justify-content:space-between;
-  padding:16px 0;
-  border-bottom:1px solid #eee;
+.details div {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.95rem;
 }
 
-.rule{
-  display:flex;
-  gap:15px;
-  margin-top:25px;
+.details div span {
+  color: #666;
 }
 
-.rule span{
-  font-size:1.5rem;
+.details div:last-child {
+  border-bottom: none;
+}
+
+.rules-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111;
+}
+
+/* ✅ rule uses div for icon — removed span font-size that broke react-icons */
+.rule {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  margin-top: 20px;
+  color: #444;
+}
+
+.rule svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #5b32f3;
+}
+
+.rule strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #111;
+}
+
+.rule p {
+  color: #888;
+  font-size: 0.88rem;
+  margin-top: 3px;
 }
 
 /* FOOTER */
 
-.features{
-  margin-top:24px;
-  background:#f5f0ff;
-  border-radius:20px;
-  padding:25px;
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
+.features {
+  margin-top: 24px;
+  background: #f5f0ff;
+  border-radius: 20px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
-.feature{
-  display:flex;
-  gap:15px;
+.feature {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.feature svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: #5b32f3;
+}
+
+.feature strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #111;
+}
+
+.feature p {
+  color: #888;
+  font-size: 0.85rem;
+  margin-top: 3px;
 }
 
 /* MOBILE */
 
-@media(max-width:768px){
+@media (max-width: 768px) {
 
-  .queue-container{
-    padding:12px;
+  .queue-container {
+    padding: 12px;
   }
 
-  .queue-header{
-    flex-direction:column;
-    gap:15px;
+  .queue-header {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  .content-grid{
-    grid-template-columns:1fr;
+  .content-grid {
+    grid-template-columns: 1fr;
   }
 
-  .queue-title{
-    flex-direction:column;
-    text-align:center;
+  .queue-title {
+    flex-direction: column;
+    text-align: center;
   }
 
-  .queue-title h1{
-    font-size:2rem;
+  .queue-title h1 {
+    font-size: 2rem;
   }
 
-  .queue-status{
-    flex-direction:column;
-    gap:20px;
+  .queue-status {
+    flex-direction: column;
+    gap: 20px;
+    padding: 24px;
   }
 
-  .divider{
-    width:100%;
-    height:1px;
+  .divider {
+    width: 100%;
+    height: 1px;
   }
 
-  .bottom-row{
-    flex-direction:column;
-    gap:20px;
+  .bottom-row {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .join-btn{
-    width:100%;
+  .join-btn {
+    width: 100%;
+    justify-content: center;
   }
 
-  .features{
-    grid-template-columns:1fr;
+  .features {
+    grid-template-columns: 1fr;
   }
 
-  .logo{
-    font-size:2rem;
+  .logo {
+    font-size: 2rem;
   }
 }

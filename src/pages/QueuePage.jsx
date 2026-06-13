@@ -1,4 +1,11 @@
 import "./QueuePage.css";
+import musicImg from "../assets/musicicon.png";
+import { MdSecurity } from "react-icons/md";
+import { FiUsers, FiPhone } from "react-icons/fi";
+import { BsStars, BsExclamationTriangle, BsInfoCircle, BsCameraVideo } from "react-icons/bs";
+import { RiVerifiedBadgeFill } from "react-icons/ri";
+import { MdOutlineAccessTime } from "react-icons/md";
+import { TbShieldCheck, TbUsers, TbVideoOff } from "react-icons/tb";
 
 export default function QueuePage() {
   return (
@@ -8,12 +15,14 @@ export default function QueuePage() {
         {/* HEADER */}
         <header className="queue-header">
           <div className="logo">
-            Axcess <span>🎵</span>
+            <img src={musicImg} alt="Axcess" className="logo-icon" />
+            Axcess
           </div>
 
           <div className="header-right">
             <div className="secure">
-              🛡️ Secure Payment
+              <MdSecurity size={16} />
+              Secure Payment
             </div>
 
             <div className="user-box">
@@ -32,7 +41,9 @@ export default function QueuePage() {
           <div className="main-card">
 
             <div className="queue-title">
-              <div className="icon-circle">👥</div>
+              <div className="icon-circle">
+                <FiUsers size={22} />
+              </div>
 
               <div>
                 <h1>You're in the queue</h1>
@@ -51,20 +62,24 @@ export default function QueuePage() {
 
               <div className="status-item">
                 <p>Estimated wait time</p>
-                <h2>🕒 ~18 min</h2>
+                <h2>
+                  <MdOutlineAccessTime size={20} style={{ verticalAlign: "middle", marginRight: 4 }} />
+                  ~18 min
+                </h2>
               </div>
 
             </div>
 
             <div className="warning-box">
-              ⚠️ Any abusive, inappropriate or offensive behaviour during a
+              <BsExclamationTriangle size={15} style={{ flexShrink: 0, marginTop: 2 }} />
+              Any abusive, inappropriate or offensive behaviour during a
               call may result in immediate disconnection by the host.
             </div>
 
             <div className="bottom-row">
 
               <div className="info-text">
-                <span>ℹ️</span>
+                <BsInfoCircle size={18} style={{ flexShrink: 0, marginTop: 2 }} />
                 <div>
                   <h3>You can leave this page.</h3>
                   <p>We will notify you when it's your turn.</p>
@@ -72,7 +87,8 @@ export default function QueuePage() {
               </div>
 
               <button className="join-btn">
-                📞 Join Call
+                <FiPhone size={16} />
+                Join Call
               </button>
 
             </div>
@@ -93,7 +109,7 @@ export default function QueuePage() {
               </div>
 
               <h2>
-                Aisha ✓
+                Aisha <RiVerifiedBadgeFill size={18} style={{ color: "#4f8ef7", verticalAlign: "middle" }} />
               </h2>
 
               <p>1-on-1 Audio Call</p>
@@ -124,7 +140,7 @@ export default function QueuePage() {
               <h3>Instructions / Rules</h3>
 
               <div className="rule">
-                <span>👥</span>
+                <FiUsers size={18} style={{ flexShrink: 0, marginTop: 2 }} />
                 <div>
                   <strong>You're in the queue</strong>
                   <p>We will call you in order.</p>
@@ -132,7 +148,7 @@ export default function QueuePage() {
               </div>
 
               <div className="rule">
-                <span>✨</span>
+                <BsStars size={18} style={{ flexShrink: 0, marginTop: 2 }} />
                 <div>
                   <strong>Enjoy your talk</strong>
                   <p>Have a great conversation.</p>
@@ -140,13 +156,10 @@ export default function QueuePage() {
               </div>
 
               <div className="rule">
-                <span>⚠️</span>
+                <BsExclamationTriangle size={18} style={{ flexShrink: 0, marginTop: 2 }} />
                 <div>
                   <strong>Be respectful</strong>
-                  <p>
-                    Abusive behaviour may result in
-                    immediate disconnection.
-                  </p>
+                  <p>Abusive behaviour may result in immediate disconnection.</p>
                 </div>
               </div>
 
@@ -160,7 +173,7 @@ export default function QueuePage() {
         <div className="features">
 
           <div className="feature">
-            🛡️
+            <TbShieldCheck size={22} />
             <div>
               <strong>100% Secure Payments</strong>
               <p>Your payments are safe.</p>
@@ -168,7 +181,7 @@ export default function QueuePage() {
           </div>
 
           <div className="feature">
-            👥
+            <TbUsers size={22} />
             <div>
               <strong>Fair Queue System</strong>
               <p>First come, first served.</p>
@@ -176,7 +189,7 @@ export default function QueuePage() {
           </div>
 
           <div className="feature">
-            🔒
+            <TbVideoOff size={22} />
             <div>
               <strong>No Recordings</strong>
               <p>Your calls are private.</p>
