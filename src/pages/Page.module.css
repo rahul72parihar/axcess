@@ -1,0 +1,90 @@
+.page{
+  padding: 28px 20px 40px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .page{
+    padding: 14px 14px 24px;
+  }
+}
+
+
+.hero{
+  display:flex;
+  align-items:center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.heroArt{
+  position:relative;
+  width: 220px;
+  height: 240px;
+  flex: 0 0 auto;
+}
+
+.heroBase{
+  width: 170px;
+  height: 179px;
+  margin: 0;
+  position: absolute;
+  left: 50%;
+  top: 56px;
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.heroReact{
+  position:absolute;
+  left: 50%;
+  top: 88px;
+  height: 28px;
+  transform: translateX(-50%) perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg) scale(1.4);
+  z-index: 1;
+}
+
+.heroVite{
+  position:absolute;
+  left: 50%;
+  top: 162px;
+  height: 26px;
+  width: auto;
+  transform: translateX(-50%) perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg) scale(0.8);
+  z-index: 0;
+}
+
+.heroCopy{
+  flex: 1 1 360px;
+}
+
+.lead{
+  margin: 10px 0 0;
+  color: var(--text-h);
+  font-size: 18px;
+}
+
+.sub{
+  margin-top: 8px;
+  opacity: 0.9;
+}
+
+.list{
+  margin: 12px 0 0;
+  padding-left: 18px;
+}
+
+.link{
+  color: var(--text-h);
+  background: var(--social-bg);
+  border-radius: 6px;
+  padding: 8px 12px;
+  display:inline-block;
+  text-decoration:none;
+  margin-top: 10px;
+}
+
+@media (max-width: 1024px){
+  .page{ padding-top: 18px; }
+}
+
