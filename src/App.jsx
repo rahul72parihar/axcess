@@ -1,12 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 
 import Home from "./pages/Home.jsx";
-import About from "./pages/About.jsx";
-import Contact from "./pages/Contact.jsx";
-import NotFound from "./pages/NotFound.jsx";
 import Callpage from "./pages/Callpage.jsx";
 import QueuePage from "./pages/QueuePage.jsx";
 import "./App.css";
+
 
 function App() {
   return (

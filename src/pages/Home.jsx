@@ -1,4 +1,6 @@
 import "./Home.css";
+import girlImg from "../assets/girl.png";
+import musicImg from "../assets/musicicon.png";
 
 const plans = [
   { mins: 3, price: 149, popular: true },
@@ -11,7 +13,10 @@ export default function Home() {
     <div className="ax-page">
       <div className="container">
         <header className="navbar">
-          <div className="logo">Axcess <span>🎵</span></div>
+          <div className="logo">
+            Axcess <img src={musicImg} alt="Music Icon" className="logoIcon" aria-hidden="true" />
+          </div>
+
           <div className="nav-right">
             <div className="secure">🛡️ Secure Payment</div>
             <button className="login-btn">👤 Login / Signup</button>
@@ -36,7 +41,7 @@ export default function Home() {
               <p>📸 8.7K followers</p>
             </div>
             <img
-              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=1200"
+              src={girlImg}
               alt="Aisha"
               className="hero-image"
             />

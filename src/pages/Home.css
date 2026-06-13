@@ -2,8 +2,9 @@
 body{font-family:Inter,sans-serif;background:#fafafa}
 .container{max-width:1200px;margin:auto;padding:24px}
 .navbar{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px}
-.logo{font-size:3rem;font-weight:800}
-.logo span{color:#4b30e3}
+.logo{font-size:3rem;font-weight:800;display:flex;align-items:center;gap:10px}
+.logoIcon{display:inline-flex;align-items:center;justify-content:center;color:#4b30e3; width:50px }
+
 .nav-right{display:flex;gap:24px;align-items:center}
 .login-btn{border:2px solid #4b30e3;background:#fff;color:#4b30e3;padding:14px 22px;border-radius:14px;font-weight:700}
 .hero-card{background:#f3effb;border-radius:28px;display:grid;grid-template-columns:1fr 430px;overflow:hidden;margin-bottom:24px}
