@@ -84,7 +84,7 @@ export default function QueuePage() {
 
             <div className="creator-card">
 
-              <div className="avatar-wrapper">
+              <div className="avatar-wrapper-queue">
                 <img
                   src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1000&q=80"
                   alt="Aisha"

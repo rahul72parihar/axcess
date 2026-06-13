@@ -58,6 +58,8 @@ export default function Callpage() {
               <img
                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=1200&q=80"
                 alt="Aisha"
+                className="avatar-img"
+                id ="avatarImg"
               />
             </div>
 
