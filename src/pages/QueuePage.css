@@ -357,7 +357,8 @@ body {
   }
 
   .queue-header {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
     gap: 15px;
   }
 
@@ -401,5 +402,261 @@ body {
 
   .logo {
     font-size: 2rem;
+  }
+}
+
+/* ===================================
+   COMPACT OVERRIDES
+   Add at very end of file
+   =================================== */
+
+.queue-container {
+  max-width: 1280px;
+  padding: 16px;
+}
+
+.queue-header {
+  display : flex;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.logo {
+  font-size: 1.8rem;
+  gap: 8px;
+}
+
+.logo-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.header-right {
+  gap: 16px;
+}
+
+.user-box img {
+  width: 40px;
+  height: 40px;
+}
+
+/* GRID */
+
+.content-grid {
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+}
+
+/* CARDS */
+
+.main-card,
+.creator-card,
+.rules-card {
+  padding: 18px;
+  border-radius: 18px;
+}
+
+/* TITLE */
+
+.icon-circle {
+  width: 56px;
+  height: 56px;
+}
+
+.queue-title {
+  gap: 14px;
+}
+
+.queue-title h1 {
+  font-size: 2rem;
+}
+
+.queue-title p {
+  margin-top: 4px;
+  font-size: 0.9rem;
+}
+
+/* STATUS */
+
+.queue-status {
+  margin-top: 18px;
+  padding: 24px;
+}
+
+.status-item p {
+  font-size: 0.85rem;
+}
+
+.status-item h2 {
+  font-size: 2rem;
+  margin-top: 6px;
+}
+
+.divider {
+  height: 70px;
+}
+
+/* WARNING */
+
+.warning-box {
+  margin-top: 16px;
+  padding: 14px;
+  font-size: 0.85rem;
+}
+
+/* BOTTOM */
+
+.bottom-row {
+  margin-top: 24px;
+}
+
+.info-text h3 {
+  font-size: 0.95rem;
+}
+
+.info-text p {
+  font-size: 0.85rem;
+}
+
+/* BUTTON */
+
+.join-btn {
+  padding: 14px 22px;
+  font-size: 0.95rem;
+  border-radius: 14px;
+}
+
+/* CREATOR */
+
+.avatar-wrapper-queue,
+.avatar-wrapper-queue img {
+  width: 90px;
+  height: 90px;
+}
+
+.creator-card h2 {
+  font-size: 1.25rem;
+  margin-top: 10px;
+}
+
+.creator-card > p {
+  font-size: 0.85rem;
+}
+
+/* DETAILS */
+
+.details {
+  margin-top: 12px;
+}
+
+.details div {
+  padding: 12px 0;
+  font-size: 0.85rem;
+}
+
+/* RULES */
+
+.rules-card h3 {
+  font-size: 0.95rem;
+}
+
+.rule {
+  margin-top: 14px;
+}
+
+.rule strong {
+  font-size: 0.85rem;
+}
+
+.rule p {
+  font-size: 0.8rem;
+}
+
+/* FEATURES */
+
+.features {
+  margin-top: 16px;
+  padding: 18px;
+  gap: 14px;
+}
+
+.feature strong {
+  font-size: 0.85rem;
+}
+
+.feature p {
+  font-size: 0.8rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+  .queue-container {
+    padding: 12px;
+  }
+
+  .queue-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .header-right {
+    width: 100%;
+    justify-content: flex-end;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .queue-title {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .queue-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .queue-status {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px;
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+  }
+
+  .bottom-row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .join-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+  }
+
+  .icon-circle {
+    width: 48px;
+    height: 48px;
+  }
+
+  .status-item h2 {
+    font-size: 1.6rem;
   }
 }

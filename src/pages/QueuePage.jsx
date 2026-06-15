@@ -46,7 +46,7 @@ export default function QueuePage() {
               </div>
 
               <div>
-                <h1>You're in the queue</h1>
+                <h3>You're in the queue</h3>
                 <p>Please wait, your call will start soon.</p>
               </div>
             </div>

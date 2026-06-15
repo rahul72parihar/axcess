@@ -158,3 +158,30 @@
   font-size: 12px;
 }
 
+.terms-check {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin: 14px 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.terms-check input {
+  margin-top: 3px;
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.switch-link {
+  background: none;
+  border: none;
+  color: #4b30e3;
+  font-weight: 600;
+  cursor: pointer;
+}

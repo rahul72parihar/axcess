@@ -17,15 +17,15 @@ import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { IoHeart } from "react-icons/io5";
 
 const plans = [
-  { mins: 3, price: 149, popular: true },
-  { mins: 5, price: 229 },
+  { mins: 3, price: 149 },
+  { mins: 5, price: 229 ,popular: true},
   { mins: 10, price: 399 },
 ];
 
 export default function Home() {
   const [authOpen, setAuthOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
-  const [selectedPlan, setSelectedPlan] = useState(plans[0]);
+  const [selectedPlan, setSelectedPlan] = useState(plans[1]);
 
   useEffect(() => {
     const raw = sessionStorage.getItem("axcess_auth");

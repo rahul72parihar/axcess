@@ -187,6 +187,8 @@ body {
 /* CARDS */
 
 .card {
+  max-width: 800px;
+  margin: 0 auto;
   background: #fff;
   border: 1px solid #ececec;
   border-radius: 24px;
@@ -429,7 +431,7 @@ body {
   }
 
   .hero-image-wrap {
-    height: 320px;
+    height: 300px;
     display: flex;
     justify-content: center;
   }
@@ -579,5 +581,318 @@ body {
 
   .queue-icon {
     font-size: 34px;
+  }
+}
+
+/* =========================
+   COMPACT LAYOUT
+   ========================= */
+
+.container {
+  padding: 16px;
+}
+
+/* Navbar */
+
+.navbar {
+  margin-bottom: 16px;
+}
+
+.logo {
+  font-size: 1.7rem;
+}
+
+.logo-icon {
+  width: 34px;
+  height: 34px;
+}
+
+.nav-right {
+  gap: 12px;
+}
+
+.login-btn {
+  padding: 10px 14px;
+}
+
+/* Hero */
+
+.hero-card {
+  margin-bottom: 16px;
+  grid-template-columns: 1fr 360px;
+}
+
+.hero-content {
+  padding: 24px;
+}
+
+.hero-content h1 {
+  font-size: 42px;
+  margin: 14px 0;
+}
+
+.hero-content p {
+  font-size: 16px;
+}
+
+.hero-meta {
+  margin-top: 18px;
+  gap: 24px;
+}
+
+/* Cards */
+
+.card {
+  padding: 20px;
+  margin-bottom: 16px;
+}
+
+.card h2 {
+  margin-bottom: 4px;
+}
+
+/* Minutes */
+
+.minutes-card {
+  gap: 20px;
+}
+
+.big-number {
+  font-size: 52px;
+}
+
+.progress {
+  margin: 12px 0;
+  height: 10px;
+}
+
+/* Plans */
+
+.plans {
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.plan {
+  padding: 18px;
+}
+
+.plan h3 {
+  font-size: 32px;
+}
+
+.plan h4 {
+  font-size: 24px;
+  margin-top: 6px;
+}
+
+.radio {
+  margin-top: 10px;
+}
+
+/* Button */
+
+.pay-btn {
+  padding: 14px;
+  font-size: 1rem;
+}
+
+.payment-note {
+  margin: 10px 0;
+}
+
+/* Queue */
+
+.queue-card {
+  padding: 14px;
+}
+
+.queue-divider {
+  margin: 0 16px;
+}
+
+.queue-icon {
+  font-size: 30px;
+}
+
+.queue-item strong {
+  font-size: 1rem;
+}
+
+.queue-item p {
+  font-size: 0.85rem;
+}
+
+/* Desktop compression */
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1280px;
+    padding: 10px 20px;
+  }
+
+  .hero-card {
+    grid-template-columns: 1fr 320px;
+  }
+
+  .hero-content {
+    padding: 20px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .big-number {
+    font-size: 46px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .plans {
+    gap: 10px;
+  }
+
+  .plan {
+    padding: 16px;
+  }
+
+  .queue-card {
+    padding: 12px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .container {
+    padding: 12px;
+  }
+
+  .hero-content {
+    padding: 18px;
+  }
+
+  .hero-content h1 {
+    font-size: 30px;
+  }
+
+  .hero-meta {
+    gap: 12px;
+    margin-top: 12px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .plans {
+    gap: 12px;
+  }
+
+  .plan {
+    padding: 16px;
+  }
+
+  .queue-card {
+    gap: 12px;
+    padding: 14px;
+  }
+}
+
+/* =========================
+   SMALLER MOBILE HEADINGS
+   ========================= */
+
+@media (max-width: 768px) {
+
+  /* Main hero heading */
+  .hero-content h1 {
+    font-size: 26px;
+    line-height: 1.15;
+    margin: 10px 0;
+  }
+
+  /* Section headings */
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 4px;
+  }
+
+  /* Plan minute numbers */
+  .plan h3 {
+    font-size: 26px;
+  }
+
+  /* Plan prices */
+  .plan h4 {
+    font-size: 20px;
+  }
+
+  /* Minutes available number */
+  .big-number {
+    font-size: 42px;
+  }
+
+  /* Queue titles */
+  .queue-item strong {
+    font-size: 15px;
+  }
+
+  /* Logo */
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Hero text */
+  .hero-content p {
+    font-size: 14px;
+  }
+
+  /* Hero stats */
+  .hero-meta strong {
+    font-size: 14px;
+  }
+
+  .hero-meta span {
+    font-size: 12px;
+  }
+
+  /* Profile card */
+  .profile-card h3 {
+    font-size: 14px;
+  }
+
+  .profile-card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-content {
+    order: 1;
+  }
+
+  .hero-image-wrap {
+    order: 2;
+    width: 100%;
+    height: 280px;
+  }
+
+  .hero-image {
+    height: 100%;
+    object-fit: cover;
   }
 }
