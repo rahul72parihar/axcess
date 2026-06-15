@@ -9,8 +9,9 @@ import {
   TbMicrophone,
   TbVolume,
 } from "react-icons/tb";
-
+import { useNavigate } from "react-router-dom";
 export default function Callpage() {
+  const navigate = useNavigate();
   return (
     <div className="call-page">
       <div className="call-container">
@@ -22,7 +23,10 @@ export default function Callpage() {
             Axcess
           </div>
 
-          <button className="top-end-btn">
+          <button className="top-end-btn"
+          onClick={()=>{
+            navigate("/")
+          }}>
             <TbPhoneOff size={18} />
             End Call
           </button>
