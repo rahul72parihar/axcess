@@ -1,18 +1,15 @@
 import "./Home.css";
 import { useEffect, useState } from "react";
 import AuthModal from "../components/AuthModal.jsx";
+import Header from "../components/Header.jsx";
+
 
 import girlImg from "../assets/girl.png";
 import instaIcon from "../assets/Instagram_icon.png";
-import musicImg from "../assets/musicicon.png";
 
-import {
-  TbShieldLock,
-  TbUser,
-  TbLock,
-  TbUsersGroup,
-  TbClockHour4,
-} from "react-icons/tb";
+
+import { TbLock, TbUsersGroup, TbClockHour4 } from "react-icons/tb";
+
 
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { IoHeart } from "react-icons/io5";
@@ -37,49 +34,35 @@ export default function Home() {
 
     if (!raw) return;
 
+    let parsed;
     try {
-      const parsed = JSON.parse(raw);
-      setLoggedIn(Boolean(parsed?.uid));
+      parsed = JSON.parse(raw);
     } catch {
       console.error("Invalid auth data");
+      return;
     }
+
+    // Avoid setting state directly in the effect body (eslint rule)
+    queueMicrotask(() => setLoggedIn(Boolean(parsed?.uid)));
   }, []);
+
 
   return (
     <div className="ax-page">
       <div className="container">
         {/* Navbar */}
-        <header className="navbar">
-          <div className="logo">
-            <img src={musicImg} alt="Axcess" className="logo-icon" />
-            <span>Axcess</span>
-          </div>
+        <Header
+          mode="default"
+          loggedIn={loggedIn}
+          showAuthButtons={true}
+          setAuthOpen
+          onLogout={() => {
+            sessionStorage.removeItem("axcess_auth");
+            setLoggedIn(false);
+          }}
+          onLogin={() => setAuthOpen(true)}
+        />
 
-          <div className="nav-right">
-            <div className="secure">
-              <TbShieldLock size={18} />
-              Secure Payment
-            </div>
-
-            {loggedIn ? (
-              <button
-                className="login-btn"
-                onClick={() => {
-                  sessionStorage.removeItem("axcess_auth");
-                  setLoggedIn(false);
-                }}
-              >
-                <TbUser size={18} />
-                Logout
-              </button>
-            ) : (
-              <button className="login-btn" onClick={() => setAuthOpen(true)}>
-                <TbUser size={18} />
-                Login / Signup
-              </button>
-            )}
-          </div>
-        </header>
 
         {/* Hero */}
         <section className="hero-card">

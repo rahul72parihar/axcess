@@ -1,8 +1,9 @@
 import "./QueuePage.css";
-import musicImg from "../assets/musicicon.png";
-import { MdSecurity } from "react-icons/md";
+import Header from "../components/Header.jsx";
+
 import { FiUsers, FiPhone } from "react-icons/fi";
-import { BsStars, BsExclamationTriangle, BsInfoCircle, BsCameraVideo } from "react-icons/bs";
+import { BsStars, BsExclamationTriangle, BsInfoCircle } from "react-icons/bs";
+
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 import { MdOutlineAccessTime } from "react-icons/md";
 import { TbShieldCheck, TbUsers, TbVideoOff } from "react-icons/tb";
@@ -14,27 +15,8 @@ export default function QueuePage() {
       <div className="queue-container">
 
         {/* HEADER */}
-        <header className="queue-header">
-          <div className="logo">
-            <img src={musicImg} alt="Axcess" className="logo-icon" />
-            Axcess
-          </div>
+        <Header mode="queue" userName="Rohan" />
 
-          <div className="header-right">
-            <div className="secure">
-              <MdSecurity size={16} />
-              Secure Payment
-            </div>
-
-            <div className="user-box">
-              <img
-                src="https://i.pravatar.cc/100?img=12"
-                alt="user"
-              />
-              <span>Rohan</span>
-            </div>
-          </div>
-        </header>
 
         <div className="content-grid">
 

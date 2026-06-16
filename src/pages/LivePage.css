@@ -1,0 +1,781 @@
+/* ============================================================
+   LivePage.css
+   Variables reused across this page. If your project already has
+   global tokens (e.g. in a theme.css), feel free to swap these for
+   references to those instead of duplicating values here.
+   ============================================================ */
+
+.ax-live-page {
+  --ax-indigo: #4f46e5;
+  --ax-indigo-dark: #4338ca;
+  --ax-indigo-soft: #eef2ff;
+  --ax-green: #16a34a;
+  --ax-green-soft: #ecfdf3;
+  --ax-amber: #d97706;
+  --ax-amber-soft: #fff7ed;
+  --ax-red: #dc2626;
+  --ax-blue: #2563eb;
+  --ax-blue-soft: #eff6ff;
+  --ax-gray-soft: #f3f4f6;
+  --ax-border: #e5e7eb;
+  --ax-text: #111827;
+  --ax-text-muted: #6b7280;
+
+  min-height: 100vh;
+  background: #fafafb;
+  display: flex;
+  flex-direction: column;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--ax-text);
+}
+
+.ax-live-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1180px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  box-sizing: border-box;
+}
+
+/* Generic card shell reused by every section on this page */
+.ax-card {
+  background: #fff;
+  border: 1px solid var(--ax-border);
+  border-radius: 16px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.ax-card-title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+/* Generic pill badge, reused for "LIVE NOW", duration chips, user counts */
+.ax-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border-radius: 999px;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+.ax-badge--live {
+  background: var(--ax-indigo);
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+
+.ax-badge--soft {
+  background: var(--ax-indigo-soft);
+  color: var(--ax-indigo-dark);
+  font-size: 12px;
+}
+
+/* Generic round icon wrapper used in the "live summary" stats row */
+.ax-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.ax-icon-circle--gray {
+  background: var(--ax-gray-soft);
+  color: #374151;
+}
+
+.ax-icon-circle--green {
+  background: var(--ax-green-soft);
+  color: var(--ax-green);
+}
+
+/* Generic rounded-square icon wrapper used in the overview stat boxes */
+.ax-icon-square {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  width: 36px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.ax-icon-square--green {
+  background: var(--ax-green);
+  color: #fff;
+}
+
+.ax-icon-square--orange {
+  background: #fed7aa;
+  color: var(--ax-amber);
+}
+
+.ax-icon-square--gray {
+  background: var(--ax-gray-soft);
+  color: var(--ax-text-muted);
+}
+
+.ax-icon-square--blue {
+  background: var(--ax-blue-soft);
+  color: var(--ax-blue);
+}
+
+/* ============================================================
+   Active call bar (dark strip)
+   ============================================================ */
+
+.ax-call-bar {
+  background: #12131a;
+  border-radius: 16px;
+  color: #fff;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.ax-call-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.ax-call-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #4ade80;
+  letter-spacing: 0.04em;
+}
+
+.ax-call-status-dot {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: #4ade80;
+}
+
+.ax-call-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ax-call-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: rgba(79, 70, 229, 0.25);
+  color: #c7d2fe;
+  font-weight: 700;
+  font-size: 13px;
+  flex-shrink: 0;
+}
+
+.ax-call-user-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ax-call-user-name {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.ax-call-user-time {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+/* Little animated equalizer bars next to the call timer */
+.ax-audio-bars {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  height: 12px;
+}
+
+.ax-audio-bars span {
+  width: 2px;
+  background: var(--ax-indigo);
+  border-radius: 1px;
+  animation: ax-audio-bounce 1s ease-in-out infinite;
+}
+
+.ax-audio-bars span:nth-child(1) { height: 40%; animation-delay: 0s; }
+.ax-audio-bars span:nth-child(2) { height: 100%; animation-delay: 0.15s; }
+.ax-audio-bars span:nth-child(3) { height: 70%; animation-delay: 0.3s; }
+.ax-audio-bars span:nth-child(4) { height: 55%; animation-delay: 0.45s; }
+
+@keyframes ax-audio-bounce {
+  0%, 100% { transform: scaleY(0.5); }
+  50% { transform: scaleY(1); }
+}
+
+.ax-call-bar-middle {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.ax-call-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ax-call-stat-label {
+  font-size: 11px;
+  color: #9ca3af;
+}
+
+.ax-call-stat-value {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ax-call-stat-value--accent {
+  color: #a78bfa;
+}
+
+.ax-call-bar-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ax-call-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  border: none;
+  background: none;
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+}
+
+.ax-call-control svg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.12);
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.ax-call-control span {
+  font-size: 11px;
+  color: #d1d5db;
+}
+
+.ax-call-control--end svg {
+  background: var(--ax-red);
+}
+
+/* ============================================================
+   "You are live!" summary card
+   ============================================================ */
+
+.ax-live-summary-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.ax-live-summary-badges {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ax-live-pulse {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  width: 18px;
+}
+
+.ax-live-pulse::before,
+.ax-live-pulse::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: var(--ax-red);
+  opacity: 0.35;
+  animation: ax-pulse-ring 1.8s ease-out infinite;
+}
+
+.ax-live-pulse::after {
+  animation-delay: 0.6s;
+}
+
+.ax-live-pulse-core {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background: var(--ax-red);
+  z-index: 1;
+}
+
+@keyframes ax-pulse-ring {
+  0% {
+    width: 8px;
+    height: 8px;
+    opacity: 0.45;
+  }
+  100% {
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+  }
+}
+
+.ax-live-summary-elapsed {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  text-align: right;
+}
+
+.ax-live-summary-elapsed-label {
+  font-size: 12px;
+  color: var(--ax-text-muted);
+}
+
+.ax-live-summary-elapsed-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ax-green);
+}
+
+.ax-live-summary-elapsed-total {
+  color: var(--ax-text-muted);
+  font-weight: 600;
+}
+
+.ax-live-summary-title {
+  margin: 0 0 4px 0;
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.ax-live-summary-subtitle {
+  margin: 0 0 18px 0;
+  font-size: 13px;
+  color: var(--ax-text-muted);
+}
+
+.ax-live-summary-stats {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.ax-live-summary-stat {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.ax-live-summary-stat > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ax-live-summary-stat-label {
+  font-size: 12px;
+  color: var(--ax-text-muted);
+}
+
+.ax-live-summary-stat-value {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.ax-live-summary-secure {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--ax-text-muted);
+  margin-left: auto;
+}
+
+/* ============================================================
+   Booked slots table
+   ============================================================ */
+
+.ax-slots-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.ax-slots-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 13px;
+  color: var(--ax-text-muted);
+}
+
+.ax-slots-table-wrap {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+.ax-slots-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.ax-slots-table thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ax-text-muted);
+  padding: 0 12px 10px 12px;
+  border-bottom: 1px solid var(--ax-border);
+}
+
+.ax-slots-table tbody td {
+  padding: 12px;
+  border-bottom: 1px solid #f3f4f6;
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.ax-slots-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ax-slot-row--preparing td {
+  background: var(--ax-amber-soft);
+}
+
+.ax-slot-user {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.ax-slot-avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: var(--ax-indigo-soft);
+  color: var(--ax-indigo-dark);
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.ax-slot-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.ax-slot-status--completed { color: var(--ax-green); }
+.ax-slot-status--preparing { color: var(--ax-amber); }
+.ax-slot-status--waiting { color: #6366f1; }
+.ax-slot-status--missed { color: var(--ax-red); }
+
+.ax-slot-status-dot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: var(--ax-green);
+  color: #fff;
+}
+
+.ax-slots-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 14px;
+}
+
+.ax-slots-more {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ax-indigo);
+}
+
+.ax-slots-view-all {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ax-indigo);
+}
+
+/* ============================================================
+   Session overview footer
+   ============================================================ */
+
+.ax-overview-heading {
+  margin-bottom: 16px;
+}
+
+.ax-overview-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.ax-overview-stat {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.ax-overview-stat > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.ax-overview-stat--green { background: var(--ax-green-soft); }
+.ax-overview-stat--orange { background: var(--ax-amber-soft); }
+.ax-overview-stat--gray { background: var(--ax-gray-soft); }
+.ax-overview-stat--blue { background: var(--ax-blue-soft); }
+
+.ax-overview-stat-label {
+  font-size: 12px;
+  color: var(--ax-text-muted);
+}
+
+.ax-overview-stat-value {
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.ax-overview-progress-track {
+  position: relative;
+  height: 6px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  margin-bottom: 10px;
+}
+
+.ax-overview-progress-fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  height: 100%;
+  border-radius: 999px;
+  background: var(--ax-green);
+  transition: width 0.3s ease;
+}
+
+.ax-overview-progress-dot {
+  position: absolute;
+  top: 50%;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: var(--ax-green);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--ax-green);
+  transform: translate(-50%, -50%);
+  transition: left 0.3s ease;
+}
+
+.ax-overview-progress-labels {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.ax-overview-progress-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+  color: var(--ax-text-muted);
+}
+
+.ax-overview-progress-label--right {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.ax-overview-progress-time {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--ax-text);
+}
+
+.ax-overview-progress-secure {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--ax-text-muted);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   Responsive — tablet
+   ============================================================ */
+
+@media (max-width: 900px) {
+  .ax-overview-progress-secure {
+    display: none; /* keep the bar readable; secure note still appears elsewhere */
+  }
+}
+
+/* ============================================================
+   Responsive — mobile
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .ax-live-content {
+    padding: 12px;
+    gap: 12px;
+  }
+
+  .ax-card {
+    padding: 16px;
+  }
+
+  .ax-call-bar {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+  }
+
+  .ax-call-bar-middle {
+    justify-content: space-between;
+  }
+
+  .ax-call-bar-right {
+    justify-content: space-between;
+  }
+
+  .ax-live-summary-top {
+    flex-direction: column;
+  }
+
+  .ax-live-summary-elapsed {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .ax-live-summary-stats {
+    gap: 16px;
+  }
+
+  .ax-live-summary-secure {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  .ax-overview-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .ax-overview-progress-labels {
+    flex-wrap: wrap;
+  }
+
+  .ax-overview-progress-label--right {
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  /* Collapse the table into stacked cards instead of letting it
+     overflow or get squeezed unreadably small. */
+  .ax-slots-table thead {
+    display: none;
+  }
+
+  .ax-slots-table,
+  .ax-slots-table tbody,
+  .ax-slots-table tr,
+  .ax-slots-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .ax-slots-table tr {
+    border: 1px solid var(--ax-border);
+    border-radius: 12px;
+    margin-bottom: 10px;
+    padding: 4px 0;
+  }
+
+  .ax-slot-row--preparing {
+    border-color: var(--ax-amber);
+  }
+
+  .ax-slots-table td {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: none;
+    padding: 8px 14px;
+  }
+
+  .ax-slots-table td::before {
+    content: attr(data-label);
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--ax-text-muted);
+  }
+
+  .ax-slots-table td[data-label="User"]::before {
+    display: none; /* the avatar + name already make this obvious */
+  }
+}
