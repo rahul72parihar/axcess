@@ -509,12 +509,12 @@ img {
   background: #f8fafc;
   border: 1px solid #e5e7eb;
   color: #374151;
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .turn-notification-icon {
-  font-size: 20px;
+  font-size: 18px;
   color: #f59e0b;
   flex-shrink: 0;
 }
