@@ -123,7 +123,11 @@ function ActiveCallBar({ call, onToggleMute, onToggleSpeaker, onEndCall }) {
           aria-pressed={call.isMuted}
           aria-label={call.isMuted ? "Unmute" : "Mute"}
         >
-          {call.isMuted ? <TbMicrophoneOff size={20} /> : <TbMicrophone size={20} />}
+          {call.isMuted ? (
+            <TbMicrophoneOff size={20} />
+          ) : (
+            <TbMicrophone size={20} />
+          )}
           <span>Mute</span>
         </button>
 
@@ -134,7 +138,11 @@ function ActiveCallBar({ call, onToggleMute, onToggleSpeaker, onEndCall }) {
           aria-pressed={call.isSpeakerOn}
           aria-label={call.isSpeakerOn ? "Turn speaker off" : "Turn speaker on"}
         >
-          {call.isSpeakerOn ? <TbVolume size={20} /> : <TbVolumeOff size={20} />}
+          {call.isSpeakerOn ? (
+            <TbVolume size={20} />
+          ) : (
+            <TbVolumeOff size={20} />
+          )}
           <span>Speaker</span>
         </button>
 
@@ -182,7 +190,10 @@ function LiveSummaryCard({ stats }) {
           <span className="ax-live-summary-elapsed-label">Elapsed Time</span>
           <span className="ax-live-summary-elapsed-value">
             {stats.elapsedTime}
-            <span className="ax-live-summary-elapsed-total"> / {stats.totalDuration}</span>
+            <span className="ax-live-summary-elapsed-total">
+              {" "}
+              / {stats.totalDuration}
+            </span>
           </span>
         </div>
       </div>
@@ -199,7 +210,9 @@ function LiveSummaryCard({ stats }) {
           </span>
           <div>
             <span className="ax-live-summary-stat-label">Session Time</span>
-            <span className="ax-live-summary-stat-value">{stats.sessionTime}</span>
+            <span className="ax-live-summary-stat-value">
+              {stats.sessionTime}
+            </span>
           </div>
         </div>
 
@@ -211,7 +224,9 @@ function LiveSummaryCard({ stats }) {
             <span className="ax-live-summary-stat-label">Total Booked</span>
             {/* TODO: source from API instead of bookedSlots.length if the
                 backend tracks this independently of the visible slot list */}
-            <span className="ax-live-summary-stat-value">{stats.totalBooked} Users</span>
+            <span className="ax-live-summary-stat-value">
+              {stats.totalBooked} Users
+            </span>
           </div>
         </div>
 
@@ -302,7 +317,8 @@ function BookedSlotsTable({ slots }) {
           <span className="ax-badge ax-badge--soft">{slots.length} Users</span>
         </div>
         <p className="ax-slots-subtitle">
-          Users will be called in this order. Users are alerted automatically before their turn.
+          Users will be called in this order. Users are alerted automatically
+          before their turn.
         </p>
       </div>
 
@@ -321,7 +337,9 @@ function BookedSlotsTable({ slots }) {
               <tr
                 key={slot.id}
                 className={
-                  slot.status === "preparing" ? "ax-slot-row--preparing" : undefined
+                  slot.status === "preparing"
+                    ? "ax-slot-row--preparing"
+                    : undefined
                 }
               >
                 <td data-label="#">{index + 1}</td>
@@ -332,7 +350,9 @@ function BookedSlotsTable({ slots }) {
                   </span>
                 </td>
                 <td data-label="Duration">
-                  <span className="ax-badge ax-badge--soft">{slot.duration}</span>
+                  <span className="ax-badge ax-badge--soft">
+                    {slot.duration}
+                  </span>
                 </td>
                 <td data-label="Status">
                   <SlotStatus status={slot.status} />
@@ -487,24 +507,132 @@ export default function LivePage() {
 
   // TODO: fetch from GET /api/sessions/:id/slots (paginated in the future)
   const [bookedSlots] = useState([
-    { id: 1, userLabel: "U1", userName: "User 1", duration: "90 min", status: "completed" },
-    { id: 2, userLabel: "U2", userName: "User 2", duration: "90 min", status: "preparing" },
-    { id: 3, userLabel: "U3", userName: "User 3", duration: "90 min", status: "waiting" },
-    { id: 4, userLabel: "U4", userName: "User 4", duration: "90 min", status: "waiting" },
-    { id: 5, userLabel: "U5", userName: "User 5", duration: "90 min", status: "waiting" },
-    { id: 6, userLabel: "U6", userName: "User 6", duration: "90 min", status: "waiting" },
-    { id: 7, userLabel: "U7", userName: "User 7", duration: "90 min", status: "waiting" },
-    { id: 8, userLabel: "U8", userName: "User 8", duration: "90 min", status: "waiting" },
-    { id: 9, userLabel: "U9", userName: "User 9", duration: "90 min", status: "waiting" },
-    { id: 10, userLabel: "U10", userName: "User 10", duration: "90 min", status: "waiting" },
-    { id: 11, userLabel: "U11", userName: "User 11", duration: "90 min", status: "waiting" },
-    { id: 12, userLabel: "U12", userName: "User 12", duration: "90 min", status: "waiting" },
-    { id: 13, userLabel: "U13", userName: "User 13", duration: "90 min", status: "waiting" },
-    { id: 14, userLabel: "U14", userName: "User 14", duration: "90 min", status: "waiting" },
-    { id: 15, userLabel: "U15", userName: "User 15", duration: "90 min", status: "waiting" },
-    { id: 16, userLabel: "U16", userName: "User 16", duration: "90 min", status: "waiting" },
-    { id: 17, userLabel: "U17", userName: "User 17", duration: "90 min", status: "waiting" },
-    { id: 18, userLabel: "U18", userName: "User 18", duration: "90 min", status: "waiting" },
+    {
+      id: 1,
+      userLabel: "U1",
+      userName: "User 1",
+      duration: "90 min",
+      status: "completed",
+    },
+    {
+      id: 2,
+      userLabel: "U2",
+      userName: "User 2",
+      duration: "90 min",
+      status: "preparing",
+    },
+    {
+      id: 3,
+      userLabel: "U3",
+      userName: "User 3",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 4,
+      userLabel: "U4",
+      userName: "User 4",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 5,
+      userLabel: "U5",
+      userName: "User 5",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 6,
+      userLabel: "U6",
+      userName: "User 6",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 7,
+      userLabel: "U7",
+      userName: "User 7",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 8,
+      userLabel: "U8",
+      userName: "User 8",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 9,
+      userLabel: "U9",
+      userName: "User 9",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 10,
+      userLabel: "U10",
+      userName: "User 10",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 11,
+      userLabel: "U11",
+      userName: "User 11",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 12,
+      userLabel: "U12",
+      userName: "User 12",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 13,
+      userLabel: "U13",
+      userName: "User 13",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 14,
+      userLabel: "U14",
+      userName: "User 14",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 15,
+      userLabel: "U15",
+      userName: "User 15",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 16,
+      userLabel: "U16",
+      userName: "User 16",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 17,
+      userLabel: "U17",
+      userName: "User 17",
+      duration: "90 min",
+      status: "waiting",
+    },
+    {
+      id: 18,
+      userLabel: "U18",
+      userName: "User 18",
+      duration: "90 min",
+      status: "waiting",
+    },
   ]);
 
   // TODO: fetch from GET /api/sessions/:id/overview (or derive on the
@@ -516,6 +644,7 @@ export default function LivePage() {
     remaining: 11,
     timeLeft: "68:18",
   });
+  const [showEndCallModal, setShowEndCallModal] = useState(false);
 
   // ---------------------------------------------------------------
   // Handlers — wire these up to the real call/session API
@@ -523,18 +652,29 @@ export default function LivePage() {
 
   const handleToggleMute = () => {
     // TODO: call WebRTC/audio SDK mute toggle here
-    setActiveCall((prev) => (prev ? { ...prev, isMuted: !prev.isMuted } : prev));
+    setActiveCall((prev) =>
+      prev ? { ...prev, isMuted: !prev.isMuted } : prev,
+    );
   };
 
   const handleToggleSpeaker = () => {
     // TODO: call WebRTC/audio SDK speaker toggle here
-    setActiveCall((prev) => (prev ? { ...prev, isSpeakerOn: !prev.isSpeakerOn } : prev));
+    setActiveCall((prev) =>
+      prev ? { ...prev, isSpeakerOn: !prev.isSpeakerOn } : prev,
+    );
   };
 
   const handleEndCall = () => {
-    // TODO: call API to end the current 1-on-1 call and move the queue
-    // to the next user. This should NOT end the whole live session.
+    setShowEndCallModal(true);
+  };
+
+  const confirmEndCall = () => {
     setActiveCall(null);
+    setShowEndCallModal(false);
+  };
+
+  const cancelEndCall = () => {
+    setShowEndCallModal(false);
   };
 
   return (
@@ -563,6 +703,35 @@ export default function LivePage() {
           totalDuration={liveStats.totalDuration}
         />
       </main>
+      {showEndCallModal && (
+        <div className="ax-modal-overlay">
+          <div className="ax-modal">
+            <h3 className="ax-modal-title">End Call?</h3>
+
+            <p className="ax-modal-text">
+              Are you sure you want to end this call?
+            </p>
+
+            <div className="ax-modal-actions">
+              <button
+                type="button"
+                className="ax-modal-btn ax-modal-btn--cancel"
+                onClick={cancelEndCall}
+              >
+                Cancel
+              </button>
+
+              <button
+                type="button"
+                className="ax-modal-btn ax-modal-btn--danger"
+                onClick={confirmEndCall}
+              >
+                End Call
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
