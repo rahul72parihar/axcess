@@ -438,10 +438,25 @@
   .call-page .hero-section {
     flex-direction: column;
     text-align: center;
+    align-items: center;
+  }
+
+  .call-page .hero-right {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .call-page .timer-card {
+    width: 100%;
+    max-width: 360px;
+    text-align: center;
   }
 
   .call-page .timer-big {
-    font-size: 30px;
+    font-size: 3rem;
+    text-align: center;
   }
 
   .call-page .hero-left h1 {
