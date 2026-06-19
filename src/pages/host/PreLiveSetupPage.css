@@ -105,6 +105,122 @@
   overflow: hidden;
 }
 
+/* ===== Create & Share ===== */
+.pls-share-title {
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 6px;
+  color: #0f0f1a;
+}
+
+.pls-share-subtitle {
+  margin: 0 0 14px;
+  font-size: 13px;
+  color: #6b7280;
+  line-height: 1.4;
+}
+
+.pls-link-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  padding: 12px 14px;
+}
+
+.pls-link-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.pls-link-left svg {
+  height: 15px;
+  width: 15px;
+  flex-shrink: 0;
+  color: #9ca3af;
+}
+
+.pls-link-text {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 13px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.pls-copy-btn {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  color: #4f46e5;
+  font-family: inherit;
+}
+
+.pls-copy-btn:hover {
+  color: #4338ca;
+}
+
+.pls-copy-btn svg {
+  height: 14px;
+  width: 14px;
+}
+
+.pls-success-box {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 10px;
+  background: #ecfdf3;
+  padding: 12px 14px;
+}
+
+.pls-success-icon {
+  display: flex;
+  height: 20px;
+  width: 20px;
+  min-width: 20px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #16a34a;
+  margin-top: 1px;
+}
+
+.pls-success-icon svg {
+  height: 11px;
+  width: 11px;
+  color: #fff;
+}
+
+.pls-success-title {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+  color: #15803d;
+}
+
+.pls-success-text {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: rgba(21, 128, 61, 0.85);
+  line-height: 1.4;
+}
+
 /* ===== Section header ===== */
 .pls-section-header {
   display: flex;

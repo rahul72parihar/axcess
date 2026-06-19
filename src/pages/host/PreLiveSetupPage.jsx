@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import {
   FaCalendarAlt,
@@ -9,6 +10,8 @@ import {
   FaLock,
   FaBroadcastTower,
   FaLightbulb,
+  FaLink,
+  FaRegCopy,
 } from "react-icons/fa";
 import Header from "../../components/Header.jsx";
 import "./PreLiveSetupPage.css";
@@ -17,6 +20,21 @@ export default function PreLiveSetupPage() {
   const navigate = useNavigate();
   const location = useLocation();
   const { duration = 120, time = "9 PM" } = location.state || {};
+
+  const [copied, setCopied] = useState(false);
+
+  // TODO(api): fetch the real generated session link from
+  // GET /api/host/sessions/:id (or include it in the response when the
+  // session is created on CreateSessionPage) instead of this placeholder.
+  const sessionLink = "axcess.live/aisha/session-12345";
+
+  const handleCopy = () => {
+    if (navigator?.clipboard) {
+      navigator.clipboard.writeText(`https://${sessionLink}`).catch(() => {});
+    }
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1800);
+  };
 
   // TODO(api): once sessions are persisted (see CreateSessionPage TODO), fetch
   // this page's data by session id from GET /api/host/sessions/:id instead of
@@ -57,6 +75,37 @@ export default function PreLiveSetupPage() {
               </div>
             </div>
           </div>
+
+          {/* Create & Share */}
+          <section className="pls-card">
+            <h2 className="pls-share-title">Create &amp; Share</h2>
+            <p className="pls-share-subtitle">
+              Your session link is generated. Share it with people to join your session.
+            </p>
+
+            <div className="pls-link-box">
+              <div className="pls-link-left">
+                <FaLink />
+                <span className="pls-link-text">{sessionLink}</span>
+              </div>
+              <button onClick={handleCopy} className="pls-copy-btn">
+                <FaRegCopy />
+                {copied ? "Copied!" : "Copy Link"}
+              </button>
+            </div>
+
+            <div className="pls-success-box">
+              <span className="pls-success-icon">
+                <FaCheck strokeWidth={3} />
+              </span>
+              <div>
+                <p className="pls-success-title">Session link is generated!</p>
+                <p className="pls-success-text">
+                  People can now use this link to join your session.
+                </p>
+              </div>
+            </div>
+          </section>
 
           {/* Section 1 – Session Overview */}
           <section className="pls-card">

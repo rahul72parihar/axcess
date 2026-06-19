@@ -600,6 +600,13 @@ img {
     flex-direction: column;
     justify-content: space-between;
   }
+
+  .minutes-card {
+    display: grid !important;
+    grid-template-columns: clamp(90px, 28vw, 140px) 1fr;
+    gap: var(--gap-sm);
+    align-items: center;
+  }
   .card h2 {
     font-size: 16px;
     line-height: 1.2;
