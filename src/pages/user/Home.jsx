@@ -59,25 +59,23 @@ export default function Home() {
             </div>
 
             <div className="hero-text">
-              <h1>
-                Talk 1-on-1
-              </h1>
+              <h1>Private 1-on-1</h1>
 
               {/* <p className="hero-location">20 • India</p> */}
-
               <p className="hero-bio">
-                Real conversations. No DMs.
+                <span>
+                  Real conversations. No DMs.
+                  </span>
+                <div className="hero-insta-badge">
+                  <img
+                    src={instaIcon}
+                    alt="Instagram Icon"
+                    className="insta-icon-homepage"
+                  />
+                  <span>Aisha, 20</span>
+                  <RiVerifiedBadgeFill className="verified" />
+                </div>
               </p>
-            </div>
-
-            <div className="hero-insta-badge">
-              <img
-                src={instaIcon}
-                alt="Instagram Icon"
-                className="insta-icon-homepage"
-              />
-              <span>Aisha, 20</span>
-              <RiVerifiedBadgeFill className="verified" />
             </div>
           </section>
 
@@ -108,7 +106,8 @@ export default function Home() {
               <div className="hero-progress-labels">
                 <span className="hero-progress-item">
                   <FiUsers size={14} className="hero-progress-icon-primary" />
-                  <strong className="hero-progress-bold">54</strong> min already booked
+                  <strong className="hero-progress-bold">54</strong> min already
+                  booked
                 </span>
                 <span className="hero-progress-divider" />
                 <span className="hero-progress-item limited-slot-warning">
@@ -124,10 +123,7 @@ export default function Home() {
           </div>
         </div>
 
-        <AuthModal
-          open={authOpen}
-          onClose={() => setAuthOpen(false)}
-        />
+        <AuthModal open={authOpen} onClose={() => setAuthOpen(false)} />
 
         {/* Minutes */}
         {/* <section className="card minutes-card">
@@ -173,9 +169,7 @@ export default function Home() {
                 className={`plan ${
                   selectedPlan.mins === plan.mins ? "active" : ""
                 }
-                ${
-                  plan.popular ? "popular-plan-card" : ""
-                }
+                ${plan.popular ? "popular-plan-card" : ""}
                 `}
               >
                 {plan.popular && <div className="popular">Most Popular</div>}
@@ -209,7 +203,10 @@ export default function Home() {
           {/* Queue */}
           <div className="turn-notification">
             <TbBellRinging className="turn-notification-icon" />
-            <span>Join the queue now. We'll notify you before it's your turn to connect.</span>
+            <span>
+              Join the queue now. We'll notify you before it's your turn to
+              connect.
+            </span>
           </div>
         </section>
       </div>
