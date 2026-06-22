@@ -171,7 +171,7 @@ img {
   flex-direction: column;
   gap: var(--gap-sm);
   color: #fff;
-  min-height: 420px;
+  min-height: 300px;
 }
 
 .hero-bg {
@@ -265,10 +265,14 @@ img {
 }
 
 .hero-text h1 {
-  font-size: clamp(26px, 4.5vw, 48px);
+  font-size: 30px;
   line-height: 1.08;
   font-weight: 800;
-  color: #fff;
+  color: black;
+  background-color: white;
+  width: max-content;
+  padding: 20px;
+  border-radius: 30px;
 }
 
 .hero-title-verified {
@@ -351,7 +355,7 @@ img {
 }
 
 .hero-stat-left span {
-  color: var(--text-muted);
+  /* color: var(--text-muted); */
   font-size: clamp(0.72rem, 0.9vw, 0.85rem);
 }
 
@@ -371,7 +375,7 @@ img {
 }
 
 .hero-stat-badge span {
-  color: var(--text-muted);
+  /* color: var(--text-muted); */
   font-size: clamp(0.68rem, 0.85vw, 0.8rem);
 }
 
@@ -392,6 +396,10 @@ img {
   width: 1px;
   height: 14px;
   background: var(--border);
+}
+
+.limited-slot-warning{
+  color: red;
 }
 
 .verified {
@@ -681,12 +689,17 @@ img {
 
   /* HERO */
   .hero-banner {
-    min-height: 320px;
+    min-height: 250px;
     padding: var(--gap-md);
   }
   section{
     flex: 0.0;
   }
+
+  .hero-text h1 {
+  font-size: 20px;
+  padding: 10px;
+}
 
   .hero-insta-badge span {
     /* display: none; */

@@ -113,7 +113,7 @@ export default function Home() {
               <div className="hero-progress-labels">
                 <span>54 min already booked</span>
                 <span className="hero-progress-divider" />
-                <span>Limited slot available</span>
+                <span className="limited-slot-warning">Limited slots available! Hurry up!</span>
               </div>
             </div>
           </div>
