@@ -446,7 +446,8 @@ img {
 }
 
 .limited-slot-warning{
-  color: red;
+  color: var(--primary) !important;  
+  font-weight: bold;
 }
 
 .verified {

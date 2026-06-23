@@ -11,7 +11,7 @@ import { FaPhoneVolume } from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
 
 import { RiVerifiedBadgeFill } from "react-icons/ri";
-import { FiUsers, FiClock } from "react-icons/fi";
+import { FiUsers } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
 
 // TODO(api): fetch from GET /api/plans — pricing/minute tiers shown on the homepage
@@ -111,8 +111,8 @@ export default function Home() {
                 </span>
                 <span className="hero-progress-divider" />
                 <span className="hero-progress-item limited-slot-warning">
-                  <FiClock size={14} />
-                  Limited slots available! Hurry up!
+                  <span style={{ fontSize: "1.3rem", lineHeight: 1 }}>⚡</span>
+                  {" "}Book first • Talk first
                 </span>
               </div>
 
