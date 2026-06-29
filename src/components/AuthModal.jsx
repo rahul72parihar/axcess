@@ -9,7 +9,6 @@ import { loginSuccess } from "../store/authSlice";
 
 export default function AuthModal({ open, onClose }) {
   const dispatch = useDispatch();
-  const [mode, setMode] = useState("login");
   const [step, setStep] = useState("phone");
 
   const [phoneNumber, setPhoneNumber] = useState("+91");
@@ -18,9 +17,6 @@ export default function AuthModal({ open, onClose }) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
-
-  const [agreeTerms, setAgreeTerms] = useState(false);
-  const [locked, setLocked] = useState(false);
 
   const recaptchaContainerRef = useRef(null);
   const verifierRef = useRef(null);
@@ -71,8 +67,6 @@ export default function AuthModal({ open, onClose }) {
       setError("");
       setSuccessMsg("");
       setLoading(false);
-      setAgreeTerms(false);
-      setLocked(false); // add this
     });
   }, [open]);
 
@@ -175,9 +169,7 @@ export default function AuthModal({ open, onClose }) {
     <div className="auth-modal-overlay" role="dialog" aria-modal="true">
       <div className="auth-modal" onClick={(e) => e.stopPropagation()}>
         <div className="auth-modal-header">
-          <div className="auth-modal-title">
-            {mode === "login" ? "Welcome Back" : "Create Account"}
-          </div>
+          <div className="auth-modal-title">Welcome</div>
 
           <button className="auth-close" onClick={onClose} aria-label="Close">
             ✕
@@ -198,10 +190,6 @@ export default function AuthModal({ open, onClose }) {
                     const digitsOnly = e.target.value.replace(/\D/g, "");
 
                     setPhoneNumber(`+91${digitsOnly}`);
-
-                    if (digitsOnly.trim().length > 0) {
-                      setLocked(true);
-                    }
                   }}
                   placeholder="9876543210"
                   inputMode="numeric"
@@ -213,18 +201,6 @@ export default function AuthModal({ open, onClose }) {
               <div className="hint">We'll send a one-time password (OTP).</div>
             </div>
 
-            {mode === "signup" && (
-              <label className="terms-check">
-                <input
-                  type="checkbox"
-                  checked={agreeTerms}
-                  onChange={(e) => setAgreeTerms(e.target.checked)}
-                />
-
-                <span>I agree to the Terms of Service and Privacy Policy</span>
-              </label>
-            )}
-
             <div ref={recaptchaContainerRef} className="recaptcha" />
 
             {error && <div className="error">{error}</div>}
@@ -234,9 +210,7 @@ export default function AuthModal({ open, onClose }) {
             <button
               className="primary"
               type="submit"
-              disabled={
-                !canSendOtp || loading || (mode === "signup" && !agreeTerms)
-              }
+              disabled={!canSendOtp || loading}
             >
               {loading ? "Sending..." : "Send OTP"}
             </button>
@@ -262,14 +236,9 @@ export default function AuthModal({ open, onClose }) {
             <button
               className="primary"
               type="submit"
-              onClick={() => setLocked(true)}
               disabled={loading || otp.trim().length < 4}
             >
-              {loading
-                ? "Verifying..."
-                : mode === "login"
-                  ? "Login"
-                  : "Create Account"}
+              {loading ? "Verifying..." : "Continue"}
             </button>
 
             {/* <button
@@ -288,33 +257,6 @@ export default function AuthModal({ open, onClose }) {
           </form>
         )}
 
-        {!locked && (
-          <div className="auth-switch">
-            {mode === "login" ? (
-              <>
-                Don't have an account?{" "}
-                <button
-                  type="button"
-                  className="switch-link"
-                  onClick={() => setMode("signup")}
-                >
-                  Sign up
-                </button>
-              </>
-            ) : (
-              <>
-                Already have an account?{" "}
-                <button
-                  type="button"
-                  className="switch-link"
-                  onClick={() => setMode("login")}
-                >
-                  Log in
-                </button>
-              </>
-            )}
-          </div>
-        )}
         <div className="auth-footer-note"></div>
       </div>
     </div>

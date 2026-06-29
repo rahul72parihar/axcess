@@ -20,11 +20,12 @@ import { MdSecurity } from "react-icons/md";
 
 import "./Header.css";
 
-function AxcessLogo() {
+function AxcessLogo({ role }) {
+  const label = role === "host" ? "host.axcess" : "Axcess";
   return (
     <div className="ax-header-logo">
-      <img src={musicImg} alt="Axcess" className="ax-header-logo-icon" />
-      <span className="ax-header-logo-text">Axcess</span>
+      <img src={musicImg} alt={label} className="ax-header-logo-icon" />
+      <span className="ax-header-logo-text">{label}</span>
     </div>
   );
 }
@@ -143,11 +144,13 @@ export default function Header({
   onLogin,
   onProfile,
   setShowEndCallModal,
+  role: roleProp,
 }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const loggedIn = useSelector((state) => state.auth.loggedIn);
-  const role = useSelector((state) => state.auth.role);
+  const storeRole = useSelector((state) => state.auth.role);
+  const role = roleProp ?? storeRole;
 
   const handleLogout = () => {
     dispatch(logout());
@@ -161,7 +164,7 @@ export default function Header({
   if (mode === "call") {
     return (
       <header className="ax-header ax-header--call">
-        <AxcessLogo />
+        <AxcessLogo role={role} />
 
         <button
           className="ax-header-end-call"
@@ -177,7 +180,7 @@ export default function Header({
   if (mode === "queue") {
     return (
       <header className="ax-header ax-header--queue">
-        <AxcessLogo />
+        <AxcessLogo role={role} />
 
         <div className="ax-header-queue-right">
           <div className="ax-header-secure">
@@ -201,7 +204,7 @@ export default function Header({
     return (
       <header className="ax-header ax-header--default">
         <div className="ax-header-left">
-          <AxcessLogo />
+          <AxcessLogo role={role} />
         </div>
 
         <div className="ax-header-right">
@@ -220,7 +223,7 @@ export default function Header({
   return (
     <header className="ax-header ax-header--default">
       <div className="ax-header-left">
-        <AxcessLogo />
+        <AxcessLogo role={role} />
       </div>
 
       <div className="ax-header-right">
@@ -244,7 +247,7 @@ export default function Header({
               type="button"
             >
               <TbUser size={14} />
-              Login / Signup
+              Login
             </button>
           ))}
       </div>

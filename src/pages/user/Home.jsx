@@ -6,7 +6,7 @@ import Header from "../../components/Header.jsx";
 import girlImg from "../../assets/girl.png";
 import instaIcon from "../../assets/Instagram_icon.png";
 
-import { TbLock } from "react-icons/tb";
+import { TbLock, TbClock } from "react-icons/tb";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
 
@@ -93,9 +93,9 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="live-badge">
-                <span className="live-dot" />
-                LIVE NOW
+              <div className="ends-at-badge">
+                <TbClock size={14} />
+                Ends at 10:30 PM
               </div>
             </div>
 
@@ -160,6 +160,9 @@ export default function Home() {
         {/* Pricing */}
         <section className="card">
           <h2>Choose your minutes</h2>
+          <p className="plans-subtitle">
+            Select your talk time from this <strong>90 minutes</strong> session
+          </p>
 
           <div className="plans">
             {plans.map((plan) => (

@@ -119,8 +119,8 @@ export default function HostLoginPage() {
     <div className="hl-page">
       <div className="hl-card">
         <div className="hl-logo">
-          <img src={musicImg} alt="Axcess" className="hl-logo-icon" />
-          <span className="hl-logo-text">Axcess</span>
+          <img src={musicImg} alt="host.axcess" className="hl-logo-icon" />
+          <span className="hl-logo-text">host.axcess</span>
         </div>
 
         <div className="hl-badge">

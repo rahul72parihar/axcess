@@ -34,7 +34,7 @@ export default function SessionEndedPage() {
 
   return (
     <div className="se-page">
-      <Header mode="create" />
+      <Header mode="create" role="host" />
 
       <main className="se-main">
         <div className="se-content">

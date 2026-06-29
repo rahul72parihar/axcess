@@ -19,6 +19,8 @@ const SECTIONS = [
     bg: "#f5f3ff",
     pages: [
       { name: "Host Login", path: "/host/login", desc: "Phone OTP login for hosts" },
+      { name: "Host Get Started", path: "/host/get-started", desc: "Apply to become a host" },
+      { name: "Host Apply", path: "/host/apply", desc: "Host application form" },
       { name: "Host Dashboard", path: "/host/dashboard", desc: "Host home screen with stats & quick tips" },
       { name: "Pre Setup", path: "/host/session", desc: "Pick duration & start time" },
       { name: "Pre-Live Setup", path: "/host/prelive", desc: "Review session before going live" },

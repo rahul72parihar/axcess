@@ -637,7 +637,7 @@ export default function LivePage() {
           bell next to the avatar in the header. The shared Header component
           doesn't currently render one — add it there if you want it on
           every page, rather than duplicating header markup here. */}
-      <Header mode="create" loggedIn userName="Aisha" />
+      <Header mode="create" loggedIn userName="Aisha" role="host" />
 
       <main className="ax-live-content">
         <ActiveCallBar

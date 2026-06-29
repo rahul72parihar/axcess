@@ -10,6 +10,8 @@ import Callpage from "./pages/user/CallPage.jsx";
 
 // Host pages
 import HostLoginPage from "./pages/host/HostLoginPage.jsx";
+import HostGetStartedPage from "./pages/host/HostGetStartedPage.jsx";
+import HostApplyPage from "./pages/host/HostApplyPage.jsx";
 import HostDashboardPage from "./pages/host/HostDashboardPage.jsx";
 import CreateSessionPage from "./pages/host/CreateSessionPage.jsx";
 import PreLiveSetupPage from "./pages/host/PreLiveSetupPage.jsx";
@@ -39,6 +41,8 @@ function App() {
 
       {/* Host routes */}
       <Route path="/host/login" element={<HostLoginPage />} />
+      <Route path="/host/get-started" element={<HostGetStartedPage />} />
+      <Route path="/host/apply" element={<HostApplyPage />} />
       <Route path="/host/dashboard" element={<HostDashboardPage />} />
       <Route path="/host/session" element={<CreateSessionPage />} />
       <Route path="/host/prelive" element={<PreLiveSetupPage />} />

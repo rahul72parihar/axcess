@@ -1,0 +1,100 @@
+.hgs-page {
+  min-height: 100vh;
+  background: #f8f9fc;
+}
+
+.hgs-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 24px;
+}
+
+.hgs-subtitle {
+  color: #6b7280;
+  font-size: 1.05rem;
+  margin-bottom: 40px;
+}
+
+.hgs-card {
+  width: 100%;
+  max-width: 360px;
+  background: #fff;
+  border: 1px solid #ececf2;
+  border-radius: 20px;
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hgs-icon-circle {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  background: #e3f5ea;
+  color: #1f9d55;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.hgs-card h2 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.hgs-card-desc {
+  color: #6b7280;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 24px;
+}
+
+.hgs-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-self: flex-start;
+}
+
+.hgs-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #374151;
+  font-size: 0.95rem;
+}
+
+.hgs-benefits svg {
+  color: #1f9d55;
+  flex-shrink: 0;
+}
+
+.hgs-apply-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1f9d55;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.hgs-apply-btn:hover {
+  background: #188145;
+}

@@ -53,7 +53,7 @@ export default function HostDashboardPage() {
 
   return (
     <div className="hd-page">
-      <Header mode="create" />
+      <Header mode="create" role="host" />
 
       <main className="hd-main">
         <div className="hd-content">

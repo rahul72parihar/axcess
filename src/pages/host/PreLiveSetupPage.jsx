@@ -92,7 +92,7 @@ export default function PreLiveSetupPage() {
 
   return (
     <div className="pls-page">
-      <Header mode="create" />
+      <Header mode="create" role="host" />
 
       <main className="pls-main">
         <div className="pls-content">

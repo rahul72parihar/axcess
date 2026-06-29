@@ -53,7 +53,7 @@ export default function CreateSessionPage() {
 
   return (
     <div className="axcess-page">
-      <Header mode="create" />
+      <Header mode="create" role="host" />
 
       {/* 3-step stepper */}
       <div className="axcess-stepper">

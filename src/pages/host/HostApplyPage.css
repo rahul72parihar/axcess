@@ -1,0 +1,114 @@
+.hap-page {
+  min-height: 100vh;
+  background: #f8f9fc;
+}
+
+.hap-main {
+  display: flex;
+  justify-content: center;
+  padding: 64px 24px;
+}
+
+.hap-card {
+  width: 100%;
+  max-width: 460px;
+  background: #fff;
+  border: 1px solid #ececf2;
+  border-radius: 20px;
+  padding: 48px 40px;
+  text-align: center;
+}
+
+.hap-card h1 {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.hap-subtitle {
+  color: #8b8fa3;
+  font-size: 0.95rem;
+  margin-bottom: 32px;
+}
+
+.hap-field {
+  text-align: left;
+  margin-bottom: 24px;
+}
+
+.hap-field label {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.hap-field input {
+  width: 100%;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-size: 0.95rem;
+  color: #111827;
+  background: #fff;
+}
+
+.hap-field input::placeholder {
+  color: #a8abb8;
+}
+
+.hap-field input:focus {
+  outline: none;
+  border-color: #5b4ce0;
+}
+
+.hap-apply-btn {
+  width: 100%;
+  background: #5b4ce0;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 16px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.hap-apply-btn:hover:not(:disabled) {
+  background: #4d3fd1;
+}
+
+.hap-apply-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.hap-applied {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  margin-top: 24px;
+}
+
+.hap-applied svg {
+  color: #1f9d55;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.hap-applied strong {
+  display: block;
+  color: #111827;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.hap-applied p {
+  color: #8b8fa3;
+  font-size: 0.9rem;
+  margin: 0;
+}
