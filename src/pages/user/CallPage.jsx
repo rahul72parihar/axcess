@@ -4,7 +4,7 @@ import Header from "../../components/Header.jsx";
 import { RiVerifiedBadgeFill } from "react-icons/ri";
 
 import { MdSecurity } from "react-icons/md";
-import { BsExclamationTriangle } from "react-icons/bs";
+import { BsExclamationTriangle, BsInfoCircle } from "react-icons/bs";
 import { TbPhoneOff, TbMicrophone, TbVolume } from "react-icons/tb";
 
 import { useNavigate } from "react-router-dom";
@@ -83,6 +83,13 @@ export default function Callpage() {
 
               {/* <button className="banner-close" onClick={()=>{setInfoMessage(false)}}>✕</button> */}
             </div>
+
+        <div className="warning-card">
+          <BsInfoCircle size={16} style={{ flexShrink: 0, marginTop: 2 }} />
+          Switch to Chrome or Safari for a smoother and more stable call
+          experience.
+        </div>
+
         {/* Avatar Section */}
         <section className="avatar-section">
           <div className="wave wave-left"></div>

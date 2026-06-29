@@ -42,6 +42,12 @@ export default function QueuePage() {
               </div>
             </div>
 
+            <div className="warning-box">
+              <BsInfoCircle size={15} style={{ flexShrink: 0, marginTop: 2 }} />
+              Switch to Chrome or Safari for a smoother and more stable call
+              experience.
+            </div>
+
             <div className="queue-status">
 
               <div className="status-item">

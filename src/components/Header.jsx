@@ -262,7 +262,7 @@ export default function Header({
               type="button"
             >
               <TbUser size={14} />
-              Login
+              Login/Signup
             </button>
           ))}
       </div>

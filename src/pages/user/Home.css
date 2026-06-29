@@ -215,7 +215,7 @@ img {
   gap: 8px;
   background: #fff;
   padding: 4px 12px;
-  border-radius: 12px;
+  border-radius: 20px;
   color: var(--danger);
   font-weight: 700;
   font-size: clamp(0.7rem, 0.9vw, 0.9rem);
@@ -255,7 +255,7 @@ img {
   background: #fff;
   color: #111;
   padding: 3px 8px;
-  border-radius: 16px;
+  border-radius: 20px;
   font-weight: 600;
   font-size: clamp(0.75rem, 0.9vw, 0.9rem);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
@@ -264,7 +264,7 @@ img {
 .insta-icon-homepage {
   height: 20px;
   width: 20px;
-  border-radius: 6px;
+  border-radius: 20px;
   object-fit: cover;
 }
 
@@ -286,7 +286,7 @@ img {
   background-color: white;
   width: max-content;
   padding: 10px 15px;
-  border-radius: 16px;
+  border-radius: 20px;
 }
 
 .hero-title-verified {
@@ -308,7 +308,7 @@ img {
   color: black;
   /* max-width: 480px; */
   /* padding: 5px 12px; */
-  border-radius: 10px;
+  border-radius: 20px;
 
   display: flex;
   justify-content: space-between;
@@ -317,7 +317,7 @@ img {
 }
 .hero-bio span {
   padding: 5px 10px;
-  border-radius: 12px;
+  border-radius: 20px;
   background: #fff;
 }
 
@@ -512,7 +512,7 @@ img {
 .plans-subtitle {
   color: var(--muted, #6b7280);
   font-size: clamp(0.8rem, 1vw, 0.95rem);
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .plans-subtitle strong {
@@ -688,8 +688,28 @@ img {
 }
 
 /* =========================================================
-   PAY BUTTON / PAYMENT NOTE
+   IMPORTANT NOTE / PAY BUTTON / PAYMENT NOTE
    ========================================================= */
+.important-note {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border: 1px solid #f5d77a;
+  border-radius: 12px;
+  background: #fffbf0;
+  color: #5c4a1a;
+  font-size: clamp(0.75rem, 1vw, 0.9rem);
+}
+
+.important-note svg {
+  flex-shrink: 0;
+  color: #8a6d1a;
+}
+
 .pay-btn {
   width: 100%;
   max-width: 400px;
@@ -711,7 +731,7 @@ img {
 }
 
 .payment-note {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   gap: 8px;
@@ -765,7 +785,7 @@ img {
 
   /* HERO */
   .hero-banner {
-    min-height: 250px;
+    min-height: 300px;
     padding: var(--gap-md);
   }
   section{
