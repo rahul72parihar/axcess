@@ -145,6 +145,8 @@ export default function Header({
   onProfile,
   setShowEndCallModal,
   role: roleProp,
+  showUserMenu = true,
+  showLogout = true,
 }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -208,13 +210,26 @@ export default function Header({
         </div>
 
         <div className="ax-header-right">
-          <UserMenu
-            userName={userName}
-            avatarUrl={userAvatar}
-            role={role}
-            onProfile={handleProfile}
-            onLogout={handleLogout}
-          />
+          {showUserMenu ? (
+            <UserMenu
+              userName={userName}
+              avatarUrl={userAvatar}
+              role={role}
+              onProfile={handleProfile}
+              onLogout={handleLogout}
+            />
+          ) : (
+            showLogout && (
+              <button
+                type="button"
+                className="ax-header-logout-btn"
+                onClick={handleLogout}
+              >
+                <TbLogout size={16} />
+                Logout
+              </button>
+            )
+          )}
         </div>
       </header>
     );

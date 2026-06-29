@@ -161,7 +161,7 @@ export default function Home() {
         <section className="card">
           <h2>Choose your minutes</h2>
           <p className="plans-subtitle">
-            Select your talk time from this <strong>90 minutes</strong> session
+            Select your talk time from <strong>90 minutes</strong> session
           </p>
 
           <div className="plans">

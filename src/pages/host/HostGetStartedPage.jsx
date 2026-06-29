@@ -14,7 +14,7 @@ export default function HostGetStartedPage() {
 
   return (
     <div className="hgs-page">
-      <Header mode="create" role="host" />
+      <Header mode="create" role="host" showUserMenu={false} showLogout={false} />
 
       <main className="hgs-main">
         <p className="hgs-subtitle">Choose an option below to get started</p>

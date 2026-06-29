@@ -164,7 +164,7 @@ img {
 .hero-banner {
   flex: 1;
   position: relative;
-  border-radius: clamp(8px, 1vw, 14px);
+  border-radius: 20px;
   overflow: hidden;
   padding: var(--gap-lg);
   display: flex;
@@ -328,7 +328,7 @@ img {
   z-index: 2;
   background: #fff;
   color: #111;
-  border-radius: 10px;
+  border-radius: 20px;
   padding: clamp(12px, 1.6vw, 18px);
   margin: -40px auto 0;
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);

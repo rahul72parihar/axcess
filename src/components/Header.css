@@ -52,6 +52,20 @@
   font-size: 13px;
 }
 
+.ax-header-logout-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 12px;
+  border-radius: 10px;
+  border: 1px solid var(--border, #e5e7eb);
+  background: #fff;
+  color: #111827;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+}
+
 .ax-header-end-call {
   padding: 7px 12px;
   border: none;

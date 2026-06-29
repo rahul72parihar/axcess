@@ -21,7 +21,7 @@ export default function HostApplyPage() {
 
   return (
     <div className="hap-page">
-      <Header mode="create" role="host" />
+      <Header mode="create" role="host" showUserMenu={false} showLogout={false} />
 
       <main className="hap-main">
         <form className="hap-card" onSubmit={handleApply}>
