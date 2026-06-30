@@ -235,7 +235,7 @@ img {
   gap: 6px;
   background: #fff;
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 20px;
   border: 1.5px solid #5b4ce0;
   color: #5b4ce0;
   font-weight: 600;
@@ -424,7 +424,7 @@ img {
   gap: 8px;
   background: var(--primary-soft);
   padding: 6px 14px;
-  border-radius: 999px;
+  border-radius: 20px;
   color: var(--primary);
   font-weight: 700;
   font-size: clamp(0.7rem, 0.9vw, 0.85rem);
@@ -474,7 +474,7 @@ img {
   gap: 8px;
   padding: 8px 16px;
   border: 1px solid #e8b4b4;
-  border-radius: 999px;
+  border-radius: 20px;
   background-color: #ffffff;
   color: var(--danger);
   font-size: 12px;
