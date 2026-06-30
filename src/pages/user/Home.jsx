@@ -6,7 +6,7 @@ import Header from "../../components/Header.jsx";
 import girlImg from "../../assets/girl.png";
 import instaIcon from "../../assets/Instagram_icon.png";
 
-import { TbLock, TbClock, TbInfoCircle } from "react-icons/tb";
+import { TbLock, TbClock } from "react-icons/tb";
 import { FaPhoneVolume } from "react-icons/fa6";
 import { TbBellRinging } from "react-icons/tb";
 
@@ -192,14 +192,14 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="important-note">
+          {/* <div className="important-note">
             <TbInfoCircle size={20} />
             <span>
               <strong>Important Note</strong>: For smoother payments &
               stable calls, open in <strong>Chrome</strong> or{" "}
               <strong>Safari</strong>.
             </span>
-          </div>
+          </div> */}
 
           {/* TODO(api): wire to payment gateway (e.g. POST /api/payments/create-order),
               then on success call POST /api/queue/join before navigating to /queue. */}

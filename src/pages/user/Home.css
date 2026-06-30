@@ -255,7 +255,7 @@ img {
   background: #fff;
   color: #111;
   padding: 3px 8px;
-  border-radius: 20px;
+  border-radius: 16px;
   font-weight: 600;
   font-size: clamp(0.75rem, 0.9vw, 0.9rem);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
